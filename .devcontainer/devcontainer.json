@@ -1,11 +1,11 @@
 {
-  "name": "terraform-aws-eks-repo-template.templates.utkusarioglu.com",
+  "name": "aws.infra.nextjs-grpc.projects.utkusarioglu.com",
   "dockerComposeFile": [
     "../.docker/docker-compose.dev.yml",
     "docker-compose.yml"
   ],
   "service": "terraform",
-  "workspaceFolder": "/utkusarioglu-com/templates/terraform-aws-eks-repo-template",
+  "workspaceFolder": "/utkusarioglu-com/projects/nextjs-grpc/infra/aws",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -16,7 +16,7 @@
       ],
       "settings": {
         "workbench.colorCustomizations": {
-          "activityBar.background": "#281244"
+          "activityBar.background": "#ad7600"
         }
       }
     }
