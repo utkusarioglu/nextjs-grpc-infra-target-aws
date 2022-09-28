@@ -33,8 +33,8 @@ provider "aws" {
 
 provider "helm" {
   kubernetes {
-    host                   = module.base.cluster_endpoint
-    cluster_ca_certificate = module.base.cluster_ca_certificate
-    token                  = module.base.cluster_token
+    host                   = module.aws.cluster_endpoint
+    cluster_ca_certificate = module.aws.cluster_ca_certificate
+    token                  = module.aws.cluster_token
   }
 }

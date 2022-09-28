@@ -1,25 +1,19 @@
-module "base" {
-  source = "./modules/base/"
+module "aws" {
+  source = "../../configs/aws"
 
-  cluster_name            = var.cluster_name
-  cluster_version         = var.cluster_version
-  name_prefix             = var.name_prefix
-  main_network_block      = var.main_network_block
-  subnet_prefix_extension = var.subnet_prefix_extension
-  zone_offset             = var.zone_offset
-  eks_managed_node_groups = var.eks_managed_node_groups
-  autoscaling_average_cpu = var.autoscaling_average_cpu
-
-  providers = {
-    aws.dns_region = aws.dns_region
-    aws            = aws
-  }
-}
-
-module "config" {
-  source = "./modules/config/"
-
-  cluster_name                             = module.base.cluster_id
+  project_name                             = var.project_name
+  aws_profile                              = var.aws_profile
+  dns_region                               = var.dns_region
+  iac_environment_tag                      = var.iac_environment_tag
+  cluster_region                           = var.cluster_region
+  cluster_name                             = var.cluster_name
+  cluster_version                          = var.cluster_version
+  name_prefix                              = var.name_prefix
+  main_network_block                       = var.main_network_block
+  subnet_prefix_extension                  = var.subnet_prefix_extension
+  zone_offset                              = var.zone_offset
+  eks_managed_node_groups                  = var.eks_managed_node_groups
+  autoscaling_average_cpu                  = var.autoscaling_average_cpu
   spot_termination_handler_chart_name      = var.spot_termination_handler_chart_name
   spot_termination_handler_chart_repo      = var.spot_termination_handler_chart_repo
   spot_termination_handler_chart_version   = var.spot_termination_handler_chart_version
@@ -35,7 +29,6 @@ module "config" {
   external_dns_chart_repo                  = var.external_dns_chart_repo
   external_dns_chart_version               = var.external_dns_chart_version
   external_dns_values                      = var.external_dns_values
-  name_prefix                              = var.name_prefix
   admin_users                              = var.admin_users
   developer_users                          = var.developer_users
 
@@ -43,15 +36,4 @@ module "config" {
     aws.dns_region = aws.dns_region
     aws            = aws
   }
-}
-
-module "app" {
-  source = "./modules/app"
-
-  project_root_path         = local.project_root_path
-  aws_alb_security_group_id = module.base.aws_alb_security_group_id
-
-  depends_on = [
-    module.config
-  ]
 }
