@@ -30,7 +30,22 @@ variable "cluster_version" {
   description = "Version of the EKS cluster"
 }
 
+variable "cluster_region" {
+  type        = string
+  description = "AWS region in which the cluster shall be created"
+}
+
 variable "aws_provider_default_tags" {
   type        = map(string)
   description = "Default tags for every AWS resource to be created"
+}
+
+variable "mld" {
+  type        = string
+  description = "Mid-level domain"
+}
+
+variable "tld" {
+  type        = string
+  description = "Top-level domain"
 }
