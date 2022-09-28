@@ -1,4 +1,4 @@
-module utkusarioglu.com/projects/nextjs-grpc-infra-aws
+module utkusarioglu.com/projects/nextjs-grpc-infra-target-aws
 
 go 1.18
 

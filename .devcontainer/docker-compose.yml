@@ -12,8 +12,8 @@ services:
 
 volumes:
   vscode-extensions:
-    name: nextjs-grpc-infra-aws-vscode-extensions
+    name: nextjs-grpc-infra-target-aws-vscode-extensions
   vscode-extensions-insiders:
-    name: nextjs-grpc-infra-aws-vscode-extensions-insiders
+    name: nextjs-grpc-infra-target-aws-vscode-extensions-insiders
   go:
-    name: nextjs-grpc-infra-aws-go
+    name: nextjs-grpc-infra-target-aws-go
