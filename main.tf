@@ -31,6 +31,15 @@ module "aws" {
   external_dns_values                      = var.external_dns_values
   admin_users                              = var.admin_users
   developer_users                          = var.developer_users
+  user_create_sleep_duration               = var.user_create_sleep_duration
+  project_root_rel_path                    = var.project_root_rel_path
+
+  #relevant to app
+  sld               = var.sld
+  tld               = var.tld
+  helm_timeout_unit = var.helm_timeout_unit
+  helm_atomic       = var.helm_atomic
+
 
   providers = {
     aws.dns_region = aws.dns_region

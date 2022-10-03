@@ -24,15 +24,20 @@ func TestHttp(t *testing.T) {
 		expected string
 	}{
 		{
-			name:     "Server",
+			name:     "Rocket",
 			url:      "https://nextjs-grpc.utkusarioglu.com",
-			expected: "Server",
+			expected: "rocket",
 		},
 		{
-			name:     "address",
-			url:      "https://nextjs-grpc.utkusarioglu.com",
-			expected: "address",
+			name:     "Your name",
+			url:      "https://nextjs-grpc.utkusarioglu.com/grpc",
+			expected: "Your name is utku,",
 		},
+		// {
+		// 	name:     "Grafana",
+		// 	url:      "https://grafana.nextjs-grpc.utkusarioglu.com",
+		// 	expected: "password",
+		// },
 	}
 
 	test_structure.RunTestStage(t, "setup", func() {
@@ -76,7 +81,7 @@ func TestHttp(t *testing.T) {
 	})
 
 	test_structure.RunTestStage(t, "teardown", func() {
-		terraformOptions := test_structure.LoadTerraformOptions(t, ".")
-		terraform.Destroy(t, terraformOptions)
+		// terraformOptions := test_structure.LoadTerraformOptions(t, ".")
+		// terraform.Destroy(t, terraformOptions)
 	})
 }
