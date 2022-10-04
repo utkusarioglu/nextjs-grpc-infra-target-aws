@@ -33,6 +33,7 @@ module "aws" {
   developer_users                          = var.developer_users
   user_create_sleep_duration               = var.user_create_sleep_duration
   project_root_rel_path                    = var.project_root_rel_path
+  aws_provider_default_tags                = var.aws_provider_default_tags
 
   #relevant to app
   sld               = var.sld
