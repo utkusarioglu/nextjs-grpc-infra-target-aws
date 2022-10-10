@@ -1,0 +1,71 @@
+version: "3.9"
+
+services:
+  nextjs-grpc-infra-target-aws:
+    volumes:
+      - type: bind
+        source: ..
+        target: /utkusarioglu-com/projects/nextjs-grpc/infra/targets/aws
+
+      - type: bind
+        source: ../../../configs/aws
+        target: /utkusarioglu-com/projects/nextjs-grpc/infra/configs/aws
+      - type: bind
+        source: ../../../configs/app
+        target: /utkusarioglu-com/projects/nextjs-grpc/infra/configs/app
+      - type: bind
+        source: ../../../../api
+        target: /utkusarioglu-com/projects/nextjs-grpc/api
+        read_only: true
+      - type: bind
+        source: ../../../../certificates
+        target: /utkusarioglu-com/projects/nextjs-grpc/certificates
+        read_only: true
+      - type: bind
+        source: ../../../../grafana
+        target: /utkusarioglu-com/projects/nextjs-grpc/grafana
+        read_only: true
+      - type: bind
+        source: ../../../../ingress
+        target: /utkusarioglu-com/projects/nextjs-grpc/ingress
+        read_only: true
+      - type: bind
+        source: ../../../../jaeger
+        target: /utkusarioglu-com/projects/nextjs-grpc/jaeger
+        read_only: true
+      - type: bind
+        source: ../../../../loki
+        target: /utkusarioglu-com/projects/nextjs-grpc/loki
+        read_only: true
+      - type: bind
+        source: ../../../../ms
+        target: /utkusarioglu-com/projects/nextjs-grpc/ms
+        read_only: true
+      - type: bind
+        source: ../../../../namespaces
+        target: /utkusarioglu-com/projects/nextjs-grpc/namespaces
+        read_only: true
+      - type: bind
+        source: ../../../../networking
+        target: /utkusarioglu-com/projects/nextjs-grpc/networking
+        read_only: true
+      - type: bind
+        source: ../../../../otel-collectors
+        target: /utkusarioglu-com/projects/nextjs-grpc/otel-collectors
+        read_only: true
+      - type: bind
+        source: ../../../../otel-operator
+        target: /utkusarioglu-com/projects/nextjs-grpc/otel-operator
+        read_only: true
+      - type: bind
+        source: ../../../../prometheus
+        target: /utkusarioglu-com/projects/nextjs-grpc/prometheus
+        read_only: true
+      - type: bind
+        source: ../../../../rbac
+        target: /utkusarioglu-com/projects/nextjs-grpc/rbac
+        read_only: true
+      - type: bind
+        source: ../../../../secrets
+        target: /utkusarioglu-com/projects/nextjs-grpc/secrets
+        read_only: true
